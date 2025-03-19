@@ -11,7 +11,7 @@ console.log("STRIPE_SECRET_KEY:", process.env.STRIPE_SECRET_KEY);
 
 app.use(cors({
     origin: "*", // Можно указать конкретные домены, например: ["http://localhost:63342", "https://твой-сайт.github.io"]
-    methods: ["POST", "GET"],
+    methods: ["POST"],
     allowedHeaders: ["Content-Type"]
 }));
 app.use(express.json());
@@ -31,10 +31,9 @@ app.post("/create-checkout-session", async (req, res) => {
                 },
             ],
             mode: "payment",
-            success_url: "http://localhost:3000/success.html",
-            cancel_url: "http://localhost:3000/cancel.html",
+            success_url: "https://byuvia-stripe-bvdu5395t-andriisavelievs-projects.vercel.app/success.html",
+            cancel_url: "https://byuvia-stripe-bvdu5395t-andriisavelievs-projects.vercel.app/cancel.html",
         });
-
         res.json({ id: session.id });
     } catch (error) {
         console.error("Ошибка сервера:", error);
