@@ -2,7 +2,7 @@ const stripe = Stripe("pk_test_51R4EtLHGQDPF3kFEQGxdqgeGhzFSsgJZlfbZkEeMDMqHHdSa
 
 document.getElementById("payButton").addEventListener("click", async () => {
     try {
-        const response = await fetch("https://my-stripe-server.up.railway.app/create-checkout-session", {
+        const response = await fetch("https://stripe-checkout-server-production-c1c1.up.railway.app/create-checkout-session", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({}) // Должен быть хотя бы пустой объект
