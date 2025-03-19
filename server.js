@@ -6,8 +6,14 @@ const crypto = require("crypto");
 
 const app = express();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+console.log("STRIPE_SECRET_KEY:", process.env.STRIPE_SECRET_KEY);
 
-app.use(cors());
+
+app.use(cors({
+    origin: "*", // Можно указать конкретные домены, например: ["http://localhost:63342", "https://твой-сайт.github.io"]
+    methods: ["POST", "GET"],
+    allowedHeaders: ["Content-Type"]
+}));
 app.use(express.json());
 
 app.post("/create-checkout-session", async (req, res) => {
