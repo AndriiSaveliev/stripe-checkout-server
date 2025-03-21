@@ -31,8 +31,8 @@ app.post("/create-checkout-session", async (req, res) => {
                 },
             ],
             mode: "payment",
-            success_url: "https://byuvia-stripe-bvdu5395t-andriisavelievs-projects.vercel.app/success.html",
-            cancel_url: "https://byuvia-stripe-bvdu5395t-andriisavelievs-projects.vercel.app/cancel.html",
+            success_url:"https://byuvia-stripe.vercel.app/success.html",
+            cancel_url: "https://byuvia-stripe.vercel.app/cancel.html",
         });
         res.json({ id: session.id });
     } catch (error) {
