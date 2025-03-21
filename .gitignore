@@ -1,1 +1,19 @@
 .vercel
+# Node.js
+node_modules/
+.env
+
+# MacOS system files
+.DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Vercel (если ты не хочешь коммитить .vercel)
+.vercel/
+
+# Optional: OS/IDE configs
+.idea/
+.vscode/
